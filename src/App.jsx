@@ -1,3 +1,6 @@
+import React from "react";
+import ReactDOM from "react-dom";
+
 const Pet = (props) => {
   return React.createElement("div", {}, [
     React.createElement("h1", {}, props.name),
@@ -22,7 +25,7 @@ const App = () => {
       breed: "Black Cat",
     }),
     React.createElement(Pet, {
-      name: "Sleepy",
+      name: "Schleepy",
       animal: "Rabbit",
       breed: "idk",
     })
