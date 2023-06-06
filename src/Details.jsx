@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useParams } from "react-router";
 import { useQuery } from "@tanstack/react-query";
-import ErrorBoundary from "./ErrorBoundary";
+// import ErrorBoundary from "./ErrorBoundary";
 import fetchPet from "./fetchPet";
 import Carousel from "./Carousel";
 import Modal from "./Modal";
@@ -17,6 +17,10 @@ const Details = () => {
         <h2 className="loader">🏃‍♂️</h2>
       </div>
     );
+  }
+
+  if (results.isError) {
+    console.log("moin");
   }
 
   const pet = results.data.pets[0];
@@ -47,13 +51,13 @@ const Details = () => {
   );
 };
 
-function DetailsErrorBoundary(props) {
-  return (
-    <ErrorBoundary>
-      <Details {...props} />
-    </ErrorBoundary>
-  );
-}
+// function DetailsErrorBoundary(props) {
+//   return (
+//     <ErrorBoundary>
+//       <Details {...props} />
+//     </ErrorBoundary>
+//   );
+// }
 
 // export default DetailsErrorBoundary;
 export default Details;
